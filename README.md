@@ -24,15 +24,15 @@
 
 1. Скопируйте репозиторий
 
-	```
-	git clone https://github.com/joongloom/webarmor-cli.git
-	```
+```
+git clone https://github.com/joongloom/webarmor-cli.git
+```
 
 2. Установите необходимые зависимости:
 
-   ```
-      pip install -r requirements.txt 
-    ```
+```
+pip install -r requirements.txt 
+```
 
 ## Использование
 
