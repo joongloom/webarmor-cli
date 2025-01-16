@@ -6,6 +6,27 @@ from rich.panel import Panel
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from scanner import AdvancedSecurityAnalyzer
 
+signature = r"""
+ __      __          __       ______                                                               
+/\ \  __/\ \        /\ \     /\  _  \                                                              
+\ \ \/\ \ \ \     __\ \ \____\ \ \L\ \  _ __    ___ ___     ___   _ __                             
+ \ \ \ \ \ \ \  /'__`\ \ '__`\\ \  __ \/\`'__\/' __` __`\  / __`\/\`'__\                           
+  \ \ \_/ \_\ \/\  __/\ \ \L\ \\ \ \/\ \ \ \/ /\ \/\ \/\ \/\ \L\ \ \ \/                            
+   \ `\___x___/\ \____\\ \_,__/ \ \_\ \_\ \_\ \ \_\ \_\ \_\ \____/\ \_\                            
+    '\/__//__/  \/____/ \/___/   \/_/\/_/\/_/  \/_/\/_/\/_/\/___/  \/_/                            
+                                                                                                   
+                                                                                                   
+ __                                                           ___                                  
+/\ \                      __                                 /\_ \                                 
+\ \ \____  __  __        /\_\    ___     ___     ___      __ \//\ \     ___     ___     ___ ___    
+ \ \ '__`\/\ \/\ \       \/\ \  / __`\  / __`\ /' _ `\  /'_ `\ \ \ \   / __`\  / __`\ /' __` __`\  
+  \ \ \L\ \ \ \_\ \       \ \ \/\ \L\ \/\ \L\ \/\ \/\ \/\ \L\ \ \_\ \_/\ \L\ \/\ \L\ \/\ \/\ \/\ \ 
+   \ \_,__/\/`____ \      _\ \ \ \____/\ \____/\ \_\ \_\ \____ \/\____\ \____/\ \____/\ \_\ \_\ \_\
+    \/___/  `/___/> \    /\ \_\ \/___/  \/___/  \/_/\/_/\/___L\ \/____/\/___/  \/___/  \/_/\/_/\/_/
+               /\___/    \ \____/                         /\____/                                  
+               \/__/      \/___/                          \_/__/                                   
+"""
+
 def main():
     parser = argparse.ArgumentParser(description="vulnurability scanner by gwynbleidd")
     parser.add_argument("url", help="Target URL (e.g., https://example.com)")
@@ -16,6 +37,8 @@ def main():
         url = "https://" + url
 
     console = Console()
+
+    console.print(f"[bold green]{signature}[/bold green]")
     console.print(Panel(f"[bold blue]Scanning Target:[/bold blue] {url}", expand=False))
 
     analyzer = AdvancedSecurityAnalyzer()
